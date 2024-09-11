@@ -1,0 +1,31 @@
+<div class="book-management-container">
+  <h1 class="page-title">Gerenciamento de Livros</h1>
+
+  <div class="actions-container">
+    <button mat-raised-button color="primary" (click)="openAddBookDialog()">
+      <mat-icon>library_add</mat-icon> Adicionar Livro
+    </button>
+  </div>
+
+  <div *ngIf="books.length > 0">
+    <h3 class="results-title">Livros Cadastrados</h3>
+    <div class="books-container">
+      <mat-card *ngFor="let book of books" class="book-card">
+        <img mat-card-image [src]="book.thumbnail_url ? book.thumbnail_url : 'assets/book-thumbnail.png'" alt="{{ book.title }} cover image" class="book-cover">
+        <mat-card-content>
+          <h4 class="book-title">{{ book.title }}</h4>
+          <p class="book-author">Autor: {{ book.author }}</p>
+          <p class="book-category">Categoria: {{ book.category }}</p>
+        </mat-card-content>
+        <mat-card-actions class="action-buttons">
+          <button mat-raised-button color="accent" (click)="openBookDetails(book.title)" class="book-button">Ver Detalhes</button>
+          <button mat-raised-button color="warn" (click)="deleteBook(book.id)" class="book-button">Excluir</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+
+  <div *ngIf="books.length === 0" class="no-books-message">
+    <p>Nenhum livro cadastrado até o momento.</p>
+  </div>
+</div>

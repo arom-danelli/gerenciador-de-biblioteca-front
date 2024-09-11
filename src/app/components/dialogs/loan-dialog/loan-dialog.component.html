@@ -1,0 +1,35 @@
+<h2 mat-dialog-title class="dialog-title">Cadastrar Empréstimo</h2>
+
+<mat-dialog-content>
+  <form (ngSubmit)="onSubmit()" #loanForm="ngForm" class="dialog-form">
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Usuário</mat-label>
+      <mat-select [(ngModel)]="loan.user.id" name="userId" required>
+        <mat-option *ngFor="let user of users" [value]="user.id">
+          {{ user.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Livro</mat-label>
+      <mat-select [(ngModel)]="loan.book.id" name="bookId" required>
+        <mat-option *ngFor="let book of books" [value]="book.id">
+          {{ book.title }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Data de Devolução</mat-label>
+      <input matInput [(ngModel)]="loan.return_date" name="returnDate" type="date" required />
+    </mat-form-field>
+
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button class="cancel-button" (click)="onCancel()">Cancelar</button>
+  <button mat-raised-button color="primary" class="save-button" (click)="onSubmit()">Salvar</button>
+</mat-dialog-actions>

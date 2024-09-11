@@ -1,0 +1,21 @@
+<h2 mat-dialog-title>Editar Empréstimo</h2>
+
+<mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Data de Devolução</mat-label>
+    <input matInput type="date" [(ngModel)]="data.returnDate" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Status</mat-label>
+    <mat-select [(ngModel)]="data.status">
+      <mat-option value="EMPRESTADO">Emprestado</mat-option>
+      <mat-option value="PRESENTE">Devolvido</mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancelar</button>
+  <button mat-button (click)="onSave()">Salvar</button>
+</mat-dialog-actions>

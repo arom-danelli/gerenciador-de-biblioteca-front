@@ -1,27 +1,42 @@
-# BibliotecaAromFront
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
+# Sistema de Gerenciamento de Biblioteca
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Este projeto é um sistema de gerenciamento de biblioteca, que facilita o controle de empréstimos de livros, gerenciamento de usuários e oferece integração com a API do Google Books. Desenvolvido com ```Angular```, este documento contém todas as instruções necessárias para configuração e execução da aplicação.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Instalação
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Obs.| Repositório do Back
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+https://github.com/arom-danelli/gerenciador-de-biblioteca.git
+```
+### Antes de tudo, caso não tenha o Angular nessa máquina:
+É necessário instalar:
+* [Node.js](https://nodejs.org/pt).
+* Angular CLI (execute no terminal da sua IDE): ``npm install -g @angular/cli``
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Instalando Dependências
+Após clonar esse repositório, instale todas as dependências necessárias executando o seguinte comando:
+```bash
+npm install
+```
+Este comando utiliza o npm (gerenciador de pacotes do Node.js) para instalar as bibliotecas e pacotes listados no arquivo ``package.json``.
 
-## Further help
+## Executar a Aplicação
+Para rodar o front-end localmente, execute o seguinte comando:
+```bash
+ng serve
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## E agora?
+
+Nesse momento já é possível testar alguns elementos do front no seu browser mas...
+
+### É necessário
+
+clonar o back-end desse repo  [aqui](https://github.com/arom-danelli/gerenciador-de-biblioteca.git). Lá está explicado como fazer a instalação dele.

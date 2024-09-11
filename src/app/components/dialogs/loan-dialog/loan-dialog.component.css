@@ -1,0 +1,35 @@
+.dialog-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: #3f51b5;
+    text-align: center;
+  }
+  
+  .dialog-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  .cancel-button {
+    color: #f44336;
+  }
+  
+  .cancel-button:hover {
+    background-color: rgba(244, 67, 54, 0.1);
+  }
+  
+  .save-button {
+    background-color: #3f51b5;
+    color: white;
+  }
+  
+  .save-button:hover {
+    background-color: #303f9f;
+  }
+  

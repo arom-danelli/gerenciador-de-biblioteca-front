@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'biblioteca-arom-front';
+  
 }
+
+export const apiUrl = {
+  apiUrl: 'http://localhost:8080/api/',
+};

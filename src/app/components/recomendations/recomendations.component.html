@@ -1,0 +1,57 @@
+<h1 class="page-title">Recomendações de Livros</h1>
+
+<form class="user-search-form">
+  <mat-form-field appearance="outline" class="user-search-field">
+    <mat-label>Digite seu nome</mat-label>
+    <input
+      matInput
+      [formControl]="userControl"
+      [matAutocomplete]="auto"
+      placeholder="Ex: João Silva"
+    />
+    <mat-autocomplete
+      #auto="matAutocomplete"
+      (optionSelected)="onUserSelected($event.option.value)"
+    >
+      <mat-option
+        *ngFor="let user of filteredUsers | async"
+        [value]="user.name"
+      >
+        {{ user.name }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
+
+<div *ngIf="recomendations.length > 0" class="recommendations-section">
+  <h2 class="section-title">Livros Recomendados</h2>
+  <div class="books-container">
+    <mat-card *ngFor="let book of recomendations" class="book-card">
+      <img
+        mat-card-image
+        [src]="
+          book.thumbnail_url ? book.thumbnail_url : 'assets/book-thumbnail.png'
+        "
+        alt="{{ book.title }} cover image"
+        class="book-cover"
+      />
+      <mat-card-content>
+        <h4 class="book-title">{{ book.title }}</h4>
+        <p class="book-author"><strong>Autor:</strong> {{ book.author }}</p>
+        <p class="book-category">
+          <strong>Categoria:</strong> {{ book.category }}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button
+          mat-button
+          color="accent"
+          (click)="openBookDetails(book.title)"
+          class="details-button"
+        >
+          Ver Detalhes
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

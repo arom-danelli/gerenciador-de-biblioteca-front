@@ -1,0 +1,42 @@
+.user-container {
+    padding: 20px;
+  }
+  
+  .page-title {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  
+  .actions-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-field {
+    width: 300px;
+  }
+  
+  .user-table th.mat-header-cell {
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  
+  .actions-header {
+    text-align: center;
+  }
+  
+  .user-table td.mat-cell {
+    vertical-align: middle;
+  }
+  
+  .mat-icon-button {
+    margin-right: 5px;
+  }
+  
+  mat-paginator {
+    margin-top: 10px;
+  }
+  

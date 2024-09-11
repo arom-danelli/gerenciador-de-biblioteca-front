@@ -1,0 +1,38 @@
+<h2 mat-dialog-title class="book-dialog-title">
+  {{ data.title }}
+</h2>
+
+<mat-dialog-content class="book-dialog-content">
+  <div class="book-cover-container">
+    <img
+      [src]="
+        data.thumbnail_url ? data.thumbnail_url : 'assets/book-thumbnail.png'
+      "
+      alt="{{ data.title }} cover"
+      class="book-cover"
+    />
+  </div>
+
+  <div class="book-details">
+    <p>
+      <strong>Autor:</strong>
+      <span>{{ data.author || "Autor desconhecido" }}</span>
+    </p>
+    <p>
+      <strong>Categoria:</strong>
+      <span>{{ data.category || "Categoria indisponível" }}</span>
+    </p>
+  </div>
+
+  <div class="book-summary" *ngIf="data.summary; else noSummary">
+    <h3>Resumo</h3>
+    <p>{{ data.summary }}</p>
+  </div>
+  <ng-template #noSummary>
+    <p><em>Resumo não disponível.</em></p>
+  </ng-template>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end" class="book-dialog-actions">
+  <button mat-raised-button color="accent" (click)="onClose()">Fechar</button>
+</mat-dialog-actions>

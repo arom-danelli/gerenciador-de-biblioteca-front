@@ -1,0 +1,50 @@
+<h2 mat-dialog-title class="dialog-title">Cadastro de Usuário</h2>
+
+<mat-dialog-content class="dialog-content">
+  <form (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Nome</mat-label>
+      <input
+        matInput
+        [(ngModel)]="user.name"
+        name="name"
+        required
+        placeholder="Digite o nome completo"
+      />
+      <mat-hint align="start">Ex: João da Silva</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        [(ngModel)]="user.email"
+        name="email"
+        type="email"
+        required
+        placeholder="Digite o email"
+      />
+      <mat-error *ngIf="user.email && !user.email.includes('@')"
+        >Email inválido</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Telefone</mat-label>
+      <input
+        matInput
+        [(ngModel)]="user.phoneNumber"
+        name="phoneNumber"
+        type="tel"
+        required
+        placeholder="(xx) xxxxx-xxxx"
+      />
+      <mat-hint align="start">Formato: (99) 99999-9999</mat-hint>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end" class="dialog-actions">
+  <button mat-button (click)="onCancel()" color="warn">Cancelar</button>
+  <button mat-raised-button color="primary" (click)="onSubmit()">Salvar</button>
+</mat-dialog-actions>

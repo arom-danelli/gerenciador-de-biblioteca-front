@@ -1,0 +1,57 @@
+<div class="search-container">
+  <mat-form-field appearance="outline" class="search-field">
+    <mat-label>Buscar livro</mat-label>
+    <input
+      matInput
+      [(ngModel)]="searchQuery"
+      (keydown.enter)="searchBooks()"
+      placeholder="Digite o título do livro"
+    />
+    <button
+      mat-icon-button
+      matSuffix
+      (click)="searchBooks()"
+      aria-label="Buscar"
+    >
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
+
+<div *ngIf="books.length > 0" class="results-container">
+  <h3 class="results-title">Resultados da Busca</h3>
+  <div class="books-container">
+    <mat-card *ngFor="let book of books" class="book-card">
+      <img
+        mat-card-image
+        [src]="
+          book.thumbnail_url ? book.thumbnail_url : 'assets/book-thumbnail.png'
+        "
+        alt="{{ book.title }} cover image"
+        class="book-cover"
+      />
+      <mat-card-content>
+        <h4 class="book-title">{{ book.title }}</h4>
+        <p class="book-author">{{ book.author }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="addBookToLibrary(book)"
+          class="book-button"
+        >
+          Adicionar
+        </button>
+        <button
+          mat-raised-button
+          color="accent"
+          (click)="openBookDetails(book.title)"
+          class="book-button"
+        >
+          Detalhes
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
